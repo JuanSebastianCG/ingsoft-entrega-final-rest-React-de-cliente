@@ -1,11 +1,17 @@
-@import "scss/index.scss";
+@import "./scss/index.scss";
 
-.success {
+.success{
     border: 1px solid $success;
     background-color: $background-success;
-  }
-  
-  .error {
+}
+
+.error{
     border: 1px solid $error;
     background-color: $background-error;
-  }
+}
+
+.App {
+    h1 {
+        color: $primary_color;
+    }
+}

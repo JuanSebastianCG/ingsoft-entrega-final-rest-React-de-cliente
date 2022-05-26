@@ -1,22 +1,28 @@
 const mongoose = require("mongoose");
+const express = require('express')
 const app = require("./app");
-const port = process.env.PORT || 5000;
+const PORT_SERVER = process.env.PORT || 3977;
 const { API_VERSION, IP_SERVER, PORT_DB } = require("./config");
+const routerApi = require('./src/routes')
 
 mongoose.connect(
-  `mongodb://${IP_SERVER}:${PORT_DB}/project_db`,
+  `mongodb://${IP_SERVER}:${PORT_DB}/proyect_db`,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+
   (err, res) => {
     if (err) {
       throw err;
     } else {
-      console.log("La conexion a la base de datos es correcta.");
-
-      app.listen(port, () => {
-        console.log("######################");
-        console.log("###### API REST ######");
-        console.log("######################");
-        console.log(`http://${IP_SERVER}:${port}/api/${API_VERSION}/`);
+      console.log("Success connection to db");
+      app.listen(PORT_SERVER, () => {
+        console.log("####################");
+        console.log("#######API REST#####");
+        console.log("####################");
+        console.log(`http://${IP_SERVER}:${PORT_SERVER}/api/${API_VERSION}/`);
       });
     }
   }
 );
+
+app.use(express.json())
+routerApi(app)

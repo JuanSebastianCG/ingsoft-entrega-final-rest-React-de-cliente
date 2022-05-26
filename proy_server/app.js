@@ -1,17 +1,17 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser") ;
+const cors = require("cors");
 
 const app = express();
-const { API_VERSION } = require("./config");
+const {API_VERSION} = require("./config");
 
-const userRoutes = require("./src/routes/user");
+const userRoutes = require("./src/routes/user.router");
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-/* evitar bloqueo del cors */
+app. use(bodyParser.urlencoded({ extended: false }));
+app. use(bodyParser. json());
 
-/* Creación de los endpoint del proyecto */
-app.use(`/api/${API_VERSION}`, userRoutes);
+app.use(cors());
 
-/* Condiguración de los header HTTP */
+app.use(`/api/${API_VERSION}`, userRoutes)
+
 module.exports = app;

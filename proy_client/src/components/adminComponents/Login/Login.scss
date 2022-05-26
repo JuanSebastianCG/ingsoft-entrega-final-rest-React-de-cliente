@@ -6,14 +6,14 @@
   }
 
   &__input {
-    .ant-input-prefix {
+    /* .ant-input-prefix {
       i {
-        font-size: 0em + 13px / $defaultFontSize;
+         form-size: 0em + 22px / $defaultFontSize;
       }
-    }
+    } */
 
     input {
-      font-size: 0em + 13px / $defaultFontSize;
+      font-size: 0em + 20px / $defaultFontSize;
       &:focus {
         border-color: $primary-color;
         box-shadow: none;
@@ -23,10 +23,10 @@
 
   &__button {
     width: 100%;
-    font-size: 0em + 16px / $defaultFontSize;
+    font-size: 0em + 22px / $defaultFontSize;
     background-color: $primary-color;
     color: $font-light;
-    height: 30px;
+    height: 42px;
     margin-top: 20px;
 
     &:hover {
