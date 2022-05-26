@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "antd";
 import MenuTop from "../components/AdminComponents/MenuTop";
 import MenuSider from "../components/AdminComponents/MenuSider";
 import { GithubOutlined } from "@ant-design/icons";
 import SignIn from "../pages/Admin/SignIn";
+import { Button } from "antd";
+
 import "./LayoutAdmin.scss";
 
 export default function LayoutAdmin(props) {
@@ -38,8 +40,10 @@ export default function LayoutAdmin(props) {
           />
         </Header>
         <Content className="layout-admin__content">{children}</Content>
-        <Footer className="layout-admin__footer" >
-          <GithubOutlined style={{ fontSize: "17px" }} /> estebanpatinog
+        <Footer className="layout-admin__footer">
+          <Button type="link" onClick={() => console.log("Github")}>
+            <GithubOutlined style={{ fontSize: "17px" }} /> YanethM
+          </Button>
         </Footer>
       </Layout>
     </Layout>

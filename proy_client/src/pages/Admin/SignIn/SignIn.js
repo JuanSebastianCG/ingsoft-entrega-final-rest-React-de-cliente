@@ -12,7 +12,7 @@ export default function SignIn() {
     <Layout className="sign-in">
       <Content className="sign-in__content">
         <h1 className="sign-in__content-logo">
-          <img src={Logo} alt="Alternate"/>
+          <img src={Logo} alt=""/>
         </h1>
         <div className="sign-in__content-tabs">
           <Tabs type="card">
